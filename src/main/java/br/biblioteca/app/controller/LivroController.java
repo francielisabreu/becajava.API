@@ -28,12 +28,13 @@ private final LivroService _service;
 	}
 	
 	@PostMapping
-    public ResponseEntity criar(@RequestBody Livro livro) {
-		
-		
+    public ResponseEntity criar(@RequestBody Livro livro) {	
+		try {
 		_service.criar(livro);
 		return ResponseEntity.status(HttpStatus.CREATED).body("Livro inserido com sucesso!");
-		 		
+	   }catch (Exception e) {
+		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Ops, aconteceu um erro inesperado, tem inserir novamente");
+       	} 		
     }
 	
 	@GetMapping
