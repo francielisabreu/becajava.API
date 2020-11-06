@@ -14,7 +14,7 @@ public class Livro {
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	public Long Id_livro;
 	public String Titulo; 
-	public int n_livros;
+	public int n_paginas;
 	
 	
 	@ManyToOne
@@ -38,11 +38,11 @@ public class Livro {
 	public void setTitulo(String titulo) {
 		Titulo = titulo;
 	}
-	public int getN_livros() {
-		return n_livros;
+	public int getn_paginas() {
+		return n_paginas;
 	}
-	public void setN_livros(int n_livros) {
-		this.n_livros = n_livros;
+	public void setn_paginas(int n_paginas) {
+		this.n_paginas = n_paginas;
 	}
 	public Categoria getCategoria() {
 		return categoria;
